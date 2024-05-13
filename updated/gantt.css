@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header, .sidebar {
+  box-sizing: content-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.chart {
+  /* max-width: 850px; */
+  min-width: 750px;
+  /* max-height: 350px; */
+  min-height: 250px;
+  overflow: auto;
+  display: grid;
+  border: 2px solid #421506;
+  /* border-top-left-radius: 25px; */
+  position: relative;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  background-color: #fff2d5;
+
+}
+
+.chart-row:nth-child(odd) {
+  background-color: #FFFAFA;
+}
+
+.chart-period {
+  color: #FFFAFA;
+  background-color: #333 !important;
+  border-bottom: 2px solid #421506;
+  display: flex
+}
+
+.chart-lines {
+  position: absolute;
+  left: 50px;
+  height: 48px;
+  width: 100%;
+  background-color: transparent;
+  grid-template-columns: 50px repeat(31, 1fr);
+}
+
+.chart-period>div:not(.chart-row-item) {
+  height: 50px;
+  padding: 10px;
+  width: 70px;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+  border-right: 1px solid red;
+}
+
+.chart-lines>span {
+  left: 50px;
+  width: 50px;
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.chart-row-item {
+  position: static;
+  width: 100px;
+  background-color: #FFE8B3;
+  border: 1px solid #421506;
+  color: #421506;
+  border-top: 0;
+  border-left: 0;
+  padding: 20px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chart-row-bars {
+  position: relative;
+  list-style: none;
+  display: grid;
+  padding: 10px 5px;
+  margin-left: 50px;
+  grid-template-columns: repeat(31, 1fr);
+  grid-gap: 10px 10px;
+  border-bottom: 1px solid #421506;
+  margin-bottom: 0!important;
+}
+
+.days {
+  padding: 0px 5px;
+  position: absolute;
+  height: 100%;
+  background-color: #3498db;
+  border-radius: 5px;
+  opacity: 0.9;
+  border: 2px solid white;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.days.critical {
+  background-color: #f1c40f;
+}
+
+.days.finished {
+  background-color: #2ecc71;
+}
+
+.days.critical {
+  background-color: #f1c40f;
+}
+
+.days.late {
+  background-color: #e74c3c;
+}
+
+
+.days.finished {
+  background-color: #2ecc71;
+}
+
+.days span:not(:first-child) {
+  display: block;
+  font-size: 70%; 
+}
+.disblock {
+  display: block;
+}
+
+[template] {
+  display: none;
+}
