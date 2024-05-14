@@ -33,6 +33,26 @@ $user = $_SESSION["user"];
             font-size: 18px;
             color: #555;
         }
+
+        .upper {
+            display: flex;
+        }
+
+        .date-label {
+            margin-left: auto;
+            font-size: 20px;
+            margin-top: 17px;
+        }
+
+        body {
+            line-height: normal;
+        }
+
+        img,
+        svg {
+
+            vertical-align: initial;
+        }
     </style>
 </head>
 
@@ -78,13 +98,13 @@ $user = $_SESSION["user"];
 
     <!-- Main content area -->
     <div class="main-content">
-        <div class="bottom-right">
-            Today is: <span id="currentDate"></span>
-        </div>
         <!-- Content goes here -->
         <div class="home-content">
             <div class="container">
-                <h1 class="label">Dash Board</h1>
+                <div class="upper">
+                    <h1 class="label">Dash Board</h1>
+                    <div class="date-label"> Today is: <span id="currentDate"></span></div>
+                </div>
                 <div class="chart">
                     <div class="chart-row chart-period">
                         <div class="chart-row-item"></div>
@@ -165,12 +185,12 @@ $user = $_SESSION["user"];
             }
 
             function redirectToDeleteMember() {
-                window.location.href = 'upload_project.php';
+                window.location.href = 'deletemember.php';
             }
 
-            function activateTooltip(){
+            function activateTooltip() {
                 var tooltipTriggerList3 = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-                var tooltipList3 = [...tooltipTriggerList3].map(tooltipTriggerEl3=> new bootstrap.Tooltip(tooltipTriggerEl3))
+                var tooltipList3 = [...tooltipTriggerList3].map(tooltipTriggerEl3 => new bootstrap.Tooltip(tooltipTriggerEl3))
             }
 
 
@@ -321,7 +341,7 @@ $user = $_SESSION["user"];
 
                     if (finishedTask.includes(taskItem.name)) {
                         template.setAttribute("class", "days finished");
-                    } else if(lateTask.includes(taskItem.name)){
+                    } else if (lateTask.includes(taskItem.name)) {
                         template.setAttribute("class", "days late");
                     }
                     else {

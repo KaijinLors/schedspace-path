@@ -235,7 +235,7 @@ if (isset($_POST["import"])) {
                 }
 
                 function redirectToDeleteMember() {
-                    window.location.href = 'upload_project.php';
+                    window.location.href = 'deletemember.php';
                 }
 
 

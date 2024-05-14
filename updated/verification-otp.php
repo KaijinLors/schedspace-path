@@ -201,6 +201,7 @@ require_once "database.php";
                                   mysqli_stmt_execute($stmt);
                                   
                                   echo "<div class='success'>You are registered successfully.</div>";
+                                  echo "<script>setTimeout(function() { window.location.href = 'sign_in_page.php'; }, 2000);</script>";
                               } else {
                                   die("Error: " . mysqli_error($conn)); // Handle prepared statement error gracefully
                               }
@@ -218,9 +219,9 @@ require_once "database.php";
                       </button>
                       </form>
                     
-                      <p class="resend text-muted mb-0">
+                      <!-- <p class="resend text-muted mb-0">
                         Didn't receive a code? <a href="">Request again.</a>
-                      </p>
+                      </p> -->
                     </div>
                   </div>
                 </div>
